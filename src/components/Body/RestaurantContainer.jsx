@@ -8,7 +8,7 @@ const styleCard = {
 
 
 
-const RestaurantCard = (props) => {
+export const RestaurantCard = (props) => {
 
   let counter = 0
   const image = `${constants.CDN_URL}${props.cloudinaryImageId}`;
@@ -19,7 +19,7 @@ const RestaurantCard = (props) => {
         <h3>{props?.resName}</h3>
         <h4>{props?.varietyName || props?.cuisines[0]}</h4>
         <h4>{props?.cuisines.join(", ")}</h4>
-        <h4>{props?.avgRatingString}</h4>
+        <h4>{props?.avgRating}</h4>
         <h4> {props?.time || `${counter++}5 mins`}</h4>
       </div>
     </div>
@@ -28,16 +28,18 @@ const RestaurantCard = (props) => {
 
 
 export const RestroContainerComponent = () => {
+  
+  const finalRestaurants = !isFilter? restaurants : restaurants.filter(item=>item.info.avgRating >=4.7);
   return (
     <div className="res-container">
-      {restaurants.map((item) => {
+    {finalRestaurants.map((item) => {
         return (
           <RestaurantCard
             key={item.info.id}
             {...item.info}
           />
-        );
-      })}
+        ) ;
+      })} 
       
     </div>
   );

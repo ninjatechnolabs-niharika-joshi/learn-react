@@ -36,6 +36,9 @@ margin-bottom: 0;
     width: 100%;
     border-top: 1px solid black;
     border-radius: 20px;
+    max-height: 400px;
+    object-fit: cover;
+
 }
 
 .res-card-text {
@@ -68,6 +71,22 @@ padding-right: 10px;
 }
 
 .search {
+    /* padding: 10px ;
+    border: 1px solid gray;
+    color: gray;
+    border-radius: 10px;
+    width: 150px;
+    align-items: center ;
+    margin: 20 0 0 600;
+    padding: 20 600 20 20; */
+    
+}
+
+.search-input{
+    font-family: cursive;
+    width: inherit;
+    height: inherit;
+    border-color: transparent;
     padding: 10px ;
     border: 1px solid gray;
     color: gray;
@@ -76,5 +95,29 @@ padding-right: 10px;
     align-items: center ;
     margin: 20 0 0 600;
     padding: 20 600 20 20;
-    
+    color: black;
+
+}
+
+.search-input:focus {
+    border: 1px solid gray;
+
+}
+
+.fiter-btn {
+    background-color: black;
+    color: white;
+    border-radius: 10%;
+    margin: 20 0 0 60;
+    width: 100px;
+    font-family: cursive;
+    height: 60px;
+    margin-left: 15px;
+    cursor: pointer;
+
+}
+
+
+.filter-search {
+    display: flex;
 }

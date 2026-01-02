@@ -1,5 +1,6 @@
 const SearchComponent = () => {
-  return <div className="search">Search</div>;
+  return <div className="search">
+<input className="search-input" type="text" placeholder="Search" /></div>;
 };
 
 
