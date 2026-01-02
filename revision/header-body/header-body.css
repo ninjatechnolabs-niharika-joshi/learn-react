@@ -1,0 +1,80 @@
+.app{
+    font-family: cursive;
+}
+
+.headerComponent {
+    display: flex;
+    border: 1px solid black;
+    justify-content: space-between;
+}
+
+
+.nav-item > ul {
+    display: flex;
+    list-style-type: none;
+    margin-right: 100px;
+}
+
+.nav-item > ul > li {
+    padding: 10px;
+    font-size: 24px;
+}
+
+
+.bodyComponent{
+    margin: 20px;
+}
+.searchComponent {
+    border: 1px solid gray;
+    color: gray;
+    border-radius: 20px;
+    padding: 10px;
+    width: 500px;
+    margin-left: 30%;
+}
+
+.res-container {
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+}
+
+.res-card {
+    /* border: 1px solid black; */
+    border-radius: 10%;
+    width: 400px;
+    height: auto;
+    background-color: black;
+    color: white;
+    font-size: 20px;
+    margin: 16px;
+    padding : 0px;
+}
+
+.res-card:hover {
+    cursor: pointer;
+    border: 1px solid bisque;
+}
+
+.res-card-img-cmp {
+    width: inherit;
+    border-radius: inherit;
+
+}
+.res-card-img {
+    width: 100%;
+    /* width: inherit; */
+    object-fit: cover;
+    border-radius: inherit;
+}
+.res-card > ul {
+    list-style-type: none;
+    margin-right: 3px ;
+}
+
+.logo {
+    height: 100px;    
+}
+.logoComponent {
+    margin-left: 100px;
+}
