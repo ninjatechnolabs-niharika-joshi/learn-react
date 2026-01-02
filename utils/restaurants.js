@@ -1717,4 +1717,5 @@ const restaurants = [
   },
 ];
 
-module.exports = restaurants
+
+export default restaurants;

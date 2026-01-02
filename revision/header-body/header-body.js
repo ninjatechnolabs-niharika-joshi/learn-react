@@ -1,9 +1,9 @@
 import { createRoot } from "react-dom/client"
 
-const logoImage = new URL("./foodapp.jpg", import.meta.url)
-const burgerImage = new URL("./burger.jpg", import.meta.url)
+const logoImage = new URL("../../foodapp.jpg", import.meta.url)
+const burgerImage = new URL("../../burger.jpg", import.meta.url)
 
-import restaurants from "../../restaurants"
+import restaurants from "../../utils/restaurants"
 
 /**
  * 
