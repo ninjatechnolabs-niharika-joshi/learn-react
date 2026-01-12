@@ -6,6 +6,11 @@ useState() : Super powerful state variables
 useEffect() : 
 
 
-UseState: 
+UseState: ()
 
 - Whenever a state updates, react rerenders the component
+- useState returns a pair
+
+UseEffect: 
+- useEffect (()=>{},[]) // callback function, dependency array
+- useEffect always returns a function which is called when the component is unmounted
