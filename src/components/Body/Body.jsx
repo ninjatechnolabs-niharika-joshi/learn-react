@@ -10,8 +10,9 @@ const BodyComponent = () => {
   async function fetchData() {
     try {
       const response = await fetch('https://www.swiggy.com/dapi/restaurants/list/v5?lat=23.02760&lng=72.58710&collection=80417&tags=layout_BAU_Contextual%2Cvada_pav&sortBy=&filters=&type=rcv2&offset=0&page_type=null');
+      // const response = await fetch('https://namastedev.com/api/v1/listRestaurants');
       const res = await response.json()
-      console.log('kyu',res.data.cards[4].card.card.info)
+      console.log('kyu',res.data.cards[2].card.card.info)
       const swiggyRes = res.data.cards.filter(item =>{
         if(item?.card?.card?.info){
           const object = item?.card?.card?.info
@@ -19,6 +20,7 @@ const BodyComponent = () => {
         }
       })
       const finalRes = swiggyRes.map(item=> ({info : item?.card?.card?.info}));
+      console.log(finalRes)
       setRest(finalRes)
       setActualRest(finalRes)
 
@@ -37,6 +39,7 @@ const BodyComponent = () => {
   const [actualRest, setActualRest] = useState([])
   const [isClick, setIsClick] = useState(true)
   const [loading, setLoading] = useState(true)
+  const [searchText, setSearchText] = useState('')
   
   // conditional rendering
 //   if(rest.length === 0) {
@@ -60,16 +63,26 @@ const BodyComponent = () => {
 
       {console.log("BodyComponent rendered")}
       {/* Filter And search embedded together for better UI */}
-      <div className="filter-search">
+      <div className="filter-search" id="common-btn">
         {/* search Start */}
         <div className="search">
-          <input className="search-input" type="text" placeholder="Search" />
+          <input className="search-input" type="text" placeholder="Search" value={searchText} onChange={(e)=>{
+            setSearchText(e.target.value)
+         setRest(actualRest.filter(item=>item.info.name.toLowerCase().includes(searchText.toLowerCase()))) // if we use rest then we will always get modifieed value for ex: If we search for "Burger" then it will always show Burger or even used filtered button
+
+           
+          }}/>
+          {/* <button className="search-btn" onClick={() => {
+            console.log(searchText)
+            setRest(actualRest.filter(item=>item.info.name.toLowerCase().includes(searchText.toLowerCase()))) // if we use rest then we will always get modifieed value for ex: If we search for "Burger" then it will always show Burger or even used filtered button
+          }}>Search</button> */}
         </div>
         {/* Filter Button Start */}
         <div className="filter-btn-cmp">
-          <button className="fiter-btn" onClick={() => {
+          <button className="fiter-btn" id="common-btn" onClick={() => {
+
             console.log('Button Clicked!', isClick)
-            isClick===true ?   setRest(rest.filter(item=>item.info.avgRating >= 4.7)) : setRest(restaurants)
+            isClick=== true ?   setRest(rest.filter(item=>item.info.avgRating >= 4.7)) : setRest(actualRest)
             setIsClick(!isClick)
             console.log('Changed is Filter')
           }}> Filter Via Rating </button>

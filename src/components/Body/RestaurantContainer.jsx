@@ -16,7 +16,7 @@ export const RestaurantCard = (props) => {
     <div className="res-card" style={styleCard}>
       <img src={image} alt="food.jpg" className="res-logo"></img>
       <div className="res-card-text" style={{ height: "fit-content" }}>
-        <h3>{props?.resName}</h3>
+        <h3>{props?.name}</h3>
         <h4>{props?.varietyName || props?.cuisines[0]}</h4>
         <h4>{props?.cuisines.join(", ")}</h4>
         <h4>{props?.avgRating}</h4>
