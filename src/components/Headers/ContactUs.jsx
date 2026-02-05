@@ -1,12 +1,10 @@
-// rafce
-import React from 'react'
-
 const ContactUs = () => {
   return (
-    <div className='contact-use'>
+    <div className='contact-us'>
+<h1>       This is Contact Us page </h1>
+
       
     </div>
   )
 }
-
-export default ContactUs
+export default ContactUs;

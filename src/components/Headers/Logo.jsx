@@ -2,7 +2,6 @@ const foodappLogo = new URL("../../../foodApp.jpg", import.meta.url).href; // fo
 
 
 const LogoComponent = () => {
-  console.log("Image path:", foodappLogo); // Add this to debug
 
   return (
     <div className="logo">

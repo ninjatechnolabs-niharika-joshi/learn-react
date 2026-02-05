@@ -141,6 +141,8 @@ padding-right: 10px;
 
 .filter-search {
     display: flex;
+    margin-left: -250px;
+    /* align-items: center; */
 }
 
 .loaderComponent {

@@ -58,13 +58,13 @@ const Search = () =>{
 }
 
 const RestoCardImg = (img) => {
-    console.log('img', img)
       const image = `https://media-assets.swiggy.com/swiggy/image/upload/fl_lossy,f_auto,q_auto,w_660/${img.cloudinaryImageId}`;
     return (<div className="res-card-img-cmp">
         <img className="res-card-img" src={image}>
         </img>
     </div>)
 }
+
 const RestaurantCard = (props) =>{
     return(
     <div className="res-card">
