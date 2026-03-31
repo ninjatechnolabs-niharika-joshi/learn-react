@@ -2,12 +2,12 @@ import { useRouteError } from "react-router"; // for errr handling, only availab
 
 const Error= ()=>{
     const err = useRouteError();
-<div>
-
-    <h1 style={{color:'red'}}>Oops! Something went wrong </h1>
-    <h3>{err}</h3>
-
-</div>
+    return (
+        <div>
+            <h1 style={{color:'red'}}>Oops! Something went wrong </h1>
+            <h3 style={{color:'red'}}>{err?.statusText || err?.message}</h3>
+        </div>
+    );
 }
 
 export default Error;

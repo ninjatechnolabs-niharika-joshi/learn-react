@@ -6,6 +6,7 @@
   "scripts": {
     "dev": "vite",
     "start": "parcel index.html",
+    "server": "node --env-file=.env server.js",
     "build": "parcel build index.html",
     "lint": "eslint .",
     "test": "jest",
@@ -38,5 +39,8 @@
   "bugs": {
     "url": "https://github.com/ninjatechnolabs-niharika-joshi/learn-react/issues"
   },
-  "homepage": "https://github.com/ninjatechnolabs-niharika-joshi/learn-react#readme"
+  "homepage": "https://github.com/ninjatechnolabs-niharika-joshi/learn-react#readme",
+  "alias": {
+    "react-router/dom": "./node_modules/react-router/dist/development/dom-export.mjs"
+  }
 }
